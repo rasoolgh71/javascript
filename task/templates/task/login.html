@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>page login </h1>
+<a href="home">home </a>
+
+<form name="loginform" method="post" onsubmit="validations()">
+    {%csrf_token%}
+    <label>username:</label>
+    <input type="text" name="user">
+    <br>
+    <label>password:</label>
+    <input type="password" name="password">
+    <br>
+    <input type="submit" value="login" >
+</form>
+
+<style>
+   form{
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #ff0000;
+    resize: none;
+}
+</style>
+
+<script language="javascript" type="text/javascript">
+    function validations(){
+       var username=document.loginform.user.value;
+       var password=document.loginform.password.value;
+
+       var username1="rasool"
+       var password1=12345
+       if((username==username1)&&(password==password1)){
+            document.write("login is true")
+           //window.location.href="/home";
+            //window.location.href="home.html"
+            //window.location.replace('home');
+            return false;
+
+
+       }
+       else {
+           alert("login was unsuccfull,please cheak username or password")
+       }
+    }
+
+</script>
+
+</body>
+</html>
