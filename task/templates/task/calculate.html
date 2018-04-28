@@ -3,8 +3,6 @@
 {% load staticfiles %}
 <html lang="en">
 <head>
-     <script src="{% static 'js/jquery.js' %}"></script>
-     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <script src="{% static 'calculate.js' %}"></script>
     <meta charset="UTF-8">
@@ -12,56 +10,95 @@
 </head>
 <body>
 
- <body class="back">
-<from name="calcula">
-    <div class="control">
-        <table border="0" height="300px" width="300px" align="center" class="forming" id="xoxo" >
+<form id="calculator">
+        <table border="0" align="center" >
         <tr>
-             <td><input type="reset" name="button" value="C" class="btn btn-danger" onclick="cleartext()"></td>
-            <td colspan="3">
-                <input type="text" name="txtVal" class="form-control" placeholder="0" id="idtext">
+             <td><input type="reset" id="btnclear" value="ClR" class="btn btn-danger" onclick="cleartext()"></td>
+            <td >
+                <input type="text" id="txtDisplay" name="txtVal" placeholder="0" disabled >
             </td>
 
         </tr>
             <tr>
-                <td><input type="button" value="7" id="btn7" class="btn btn-primary" onmouseover="change_color()" onclick="getvalue(7);"></td>
-                <td><input type="button" value="8" id="btn8" class="btn btn-primary" onclick="getvalue(8)"></td>
-                <td><input type="button" value="9"  id="btn9" class="btn btn-primary" onclick="getvalue(9)"></td>
-                <td><input type="button" value="+" class="btn btn-primary" onclick="getvalue(+)"></td>
+                <td><input type="button" value="7" id="btnSeven"></td>
+                <td><input type="button" value="8" id="btnEight" ></td>
+                <td><input type="button" value="9"  id="btnNine"></td>
+                <td><input type="button" value="+" id="btnAdd" ></td>
             </tr>
             <tr>
-                <td><input type="button" value="4" id="btn4" class="btn btn-primary" onclick="getvalue(4)"></td>
-                <td><input type="button" value="5"  id="btn5" class="btn btn-primary" onclick="getvalue(5)"></td>
-                <td><input type="button" value="6"  id="btn6" class="btn btn-primary" onclick="getvalue(6)"></td>
-                <td><input type="button" value="-" class="btn btn-primary" onclick="getvalue(-)"></td>
+                <td><input type="button" value="4" id="btnFour"></td>
+                <td><input type="button" value="5"  id="btnFive" ></td>
+                <td><input type="button" value="6"  id="btnSix" ></td>
+                <td><input type="button" value="-" id="btnSubtract"></td>
             </tr>
             <tr>
-                <td><input type="button" value="1" id="btn1" class="btn btn-primary" onclick="getvalue(1)"></td>
-                <td><input type="button" value="2"  id="btn2" class="btn btn-primary" onclick="getvalue(2)"></td>
-                <td><input type="button" value="3" id="btn3" class="btn btn-primary" onclick="getvalue(3)"></td>
-                <td><input type="button" value="*" class="btn btn-primary" onclick="getvalue(*)"></td>
+                <td><input type="button" value="1" id="btnOne" ></td>
+                <td><input type="button" value="2"  id="btnTwo"  ></td>
+                <td><input type="button" value="3" id="btnThree" ></td>
+                <td><input type="button" value="*" id="btnMultiply" ></td>
             </tr>
              <tr>
-                <td><input type="button" value="0"class="btn btn-primary" onclick="getvalue(0)"></td>
-                <td><input type="button" value="."class="btn btn-primary" onclick="getvalue(.)"></td>
-                <td><input type="button" value="="class="btn btn-primary" onclick="getvalue(=)"></td>
-                <td><input type="button" value="/"class="btn btn-primary" onclick="getvalue(/)"></td>
+                <td><input type="button" value="0" id="btnZero"  ></td>
+                <td><input type="button" value="." id="btnDecimal"  ></td>
+                <td><input type="button" value="=" id="btnEquals" ></td>
+                <td><input type="button" value="/" id= "btnDivide"></td>
             </tr>
         </table>
-    </div>
-</from>
+</form>
 
 </body>
+
  <style type="text/css">
-#btn1:hover { background-color: #9999ff; }
-#btn2:hover { background-color: #9999ff; }
-#btn3:hover { background-color: #9999ff; }
-#btn4:hover { background-color: #9999ff; }
-#btn5:hover { background-color: #9999ff; }
-#btn6:hover { background-color: #9999ff; }
-#btn7:hover { background-color: #9999ff; }
-#btn8:hover { background-color: #9999ff; }
-#btn9:hover { background-color: #9999ff; }
+#btnOne:hover { background-color: #9999ff; }
+#btnTwo:hover { background-color: #9999ff; }
+#btnThree:hover { background-color: #9999ff; }
+#btnFour:hover { background-color: #9999ff; }
+#btnFive:hover { background-color: #9999ff; }
+#btnSix:hover { background-color: #9999ff; }
+#btnZero:hover { background-color: #9999ff; }
+#btnSeven:hover { background-color: #9999ff; }
+#btnEight:hover { background-color: #9999ff; }
+#btnNine:hover { background-color: #9999ff; }
+#btnDivide:hover { background-color: #9999ff; }
+#btnAdd:hover { background-color: #9999ff; }
+#btnSubtract:hover { background-color: #9999ff; }
+#btnMultiply:hover { background-color: #9999ff; }
+#btnDecimal:hover { background-color: #9999ff; }
+#btnEquals:hover { background-color: #9999ff; }
+#btnclear:hover { background-color: #9999ff; }
+</style>
+
+<style type="text/css">
+    #btnOne{ width:50px;height:50px;}
+    #btnTwo{ width:50px;height:50px;}
+    #btnThree{ width:50px;height:50px;}
+    #btnZero{ width:50px;height:50px;}
+    #btnFour{ width:50px;height:50px;}
+    #btnFive{ width:50px;height:50px;}
+    #btnSix{ width:50px;height:50px;}
+    #btnSeven{ width:50px;height:50px;}
+    #btnEight{ width:50px;height:50px;}
+    #btnNine{ width:50px;height:50px;}
+    #btnDecimal{ width:50px;height:50px;}
+    #btnAdd{ width:50px;height:50px;}
+    #btnSubtract{ width:50px;height:50px;}
+    #btnMultiply{ width:50px;height:50px;}
+    #btnDivide{ width:50px;height:50px;}
+    #btnEquals{ width:50px;height:50px;}
+    #btnclear{ width:50px;height:50px;}
+    #txtDisplay{ width:150px;height:40px;}
+     body {
+            background-color: #ff0000 ;
+            overflow: hidden;
+        };
+     #idcalculate {
+            background-color: #00ff00 ;
+
+        }
+
+
+
+
 </style>
 
 </html>

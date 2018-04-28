@@ -1,24 +1,80 @@
 <!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+ <script src="{% static 'mytest.js' %}"></script>
 <body>
+
 <h1>home</h1>
+<a href="login">page login </a>
+<br>
+<a href="calculate">calculate</a>
+<br>
+<a href="api">api</a>
+<br>
+<a href="snake">snake</a>
+<hr>
+
+<input type="button" name="getdata" value="show time " onclick="showtime()">
+<p id='time'></p>
+
+<form name="myform " action="">
+    <p>click yo cooke</p>
+    <input type="button" value="cookie"  onclick="writecooki()">
+    <input type="button" value="getvalue" onclick="getvalue()">
+    <input type="text" name="textuser" id="textid">
+    <input type="button" value="print" onclick="window.print()">
+    <input type="button" value="1" id="btnone" onclick="getval('1')">
+    <input type="text" id="testid">
+</form>
+
+<canvas id="myCanvas" width="640" height="640" style="border:1px solid #000000;margin:0px auto;width:800px;"></canvas>
+
+<script>
+
+</script>
+  document.addEventListener('keyboard',function(event))
+
+<script>
+   var one;
+    function init(){
+       one=getID("btnone")
+       one.onclick=function(){inputHandler('1');};
+
+    }
+    function getID(id){
+       alert(id)
+       return document.getElementById(id);
 
 
+    }
 
-<script language="javascript" type="text/javascript">
- document.write("hello rasool")
+    function inputHandler(txtNumber){
+       //alert(txtNumber)
+       //var stringValue=getID("textid").value;
+       document.getID("textid").value;
+       alert(stringValue)
+       //document.write(stringValue)
+    }
+    //window.onload= init;
 </script>
 
 <script>
-function sayhello(){
-    alert("hello word")
+    function getval(val){
+       //alert("in hi ");
+       document.getElementById("testid").value=document.getElementById("testid").value+val
+       //document.getElementById("btnone").value;
+       //document.getElementById()
     }
-  //onclick=sayhello()
+    //getval()
 </script>
+
+
 <script>
 function print_num(){
     var a;
@@ -35,10 +91,88 @@ function print_num(){
       document.write("Current Count : " + count );
       document.write("<br />");
     }
-}
-print_num()
+
+ print_num()
+</script>
+<script language="javascript" type="text/javascript">
+ document.write("hello rasool")
+</script>
+
+<script>
+function sayhello(){
+    alert("hello word")
+    }
+  //onclick=sayhello()
+</script>
 
 </script>
+
+<script>
+    function gourl(){
+       var a=3
+       if (a==2){
+          document.write("va is 2")
+
+       }
+       else{
+          window.location.href="login"
+       }
+    }
+    //gourl()
+</script>
+
+<script>
+     document.write("get elelmnet")
+    //alert(document.getElementById("text1"))
+    document.getElementById("text1").value;
+    alert(get)
+    //document.write(get)
+
+</script>
+<hr>
+ <lable >please enter:</lable>
+ <input type="text" id="text1">
+<hr>
+
+<script>
+ function identify(){
+   alert(this.name.toUpperCase());
+   //document.write(this.name.toUpperCase())
+   //return this.name.toUpperCase()
+
+ }
+
+ var me={
+    name="rasool";
+ };
+ var you={
+     name="reza";
+ };
+ identify.call(me)
+ identify.call(you)
+</script>
+
+<script>
+    function AutoRefresh( t ) {
+     setTimeout("location.reload(true);", t);
+   }
+   //AutoRefresh(5000)
+
+</script>
+<script>
+    function showtime(){
+      var today= new Date();
+      var h=today.getHours();
+      var m=today.getMinutes();
+      var s=today.getSeconds();
+      //alert(h + ":" + m + ":" + s);
+      document.getElementById("time").innerHTML=h + ":" + m + ":" + s;
+    }
+</script>
+
+
+
+
 
 </body>
 </html>
