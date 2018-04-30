@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Es6</h1>
+<h2>oop</h2>
+<input type="button" name="btn1" id="btn1" value="btn1">
+<br>
+<form id="myform">
+    <input type="button" id="btnzero" value="0">
+    <input type="button" id="btnone" value="1">
+    <input type="button" id="btntwo" value="2">
+    <input type="text" id="txtdis" placeholder="0">
+</form>
+
+<style>
+
+      #myform  {
+            background-color: #00ff00 ;
+            width:300px;
+            height:100px;
+
+      }
+
+</style>
+
+<script>
+    class Number{
+       constructor(){
+           //this.zero
+           document.write("in constructor Number"+"<br>")
+           //zero=getId("btnzero");
+           //document.write(this.zero)
+           //this.zero=5;
+           //zero.onclick =function(){ inputHandeler('0');};
+
+       }
+       start(){
+          document.write("in start")
+          var zero=getId("btnzero");
+          document.write("zer is:"+zero)
+          zero.onclick =function(){ inputHandeler('0');};
+       }
+
+       getId(id){
+           alert("in get id")
+           return document.getElementById(id);
+
+       }
+
+       inputHandler(val){
+           alert("in input handler")
+           //document.getElementById("txtdis").value=document.getElementById("txtdis").value+val;
+           getId("txtdis").value=getId("txtdis").value+val
+       }
+    }
+    var number= new Number();
+    number.start()
+    //number.
+</script>
+
+<script>
+    class Car{
+        constructor(){
+            this.model=4;
+            document.write("in constructor class Car"+"<br>");
+        }
+        start(){
+           return "start"+"<br>";
+        }
+        info(){
+            document.write("in class info"+this.model);
+        }
+    }
+    //var hit=new Car();
+    //document.write(hit.start());
+    //hit.info();
+
+    class Pride extends Car{
+
+        constructor(){
+           super()
+           document.write("class Pride constructor"+"<br>")
+        }
+    }
+    var pride= new Pride();
+    //pride.info()
+
+</script>
+
+<script>
+ class rectangle{
+    constructor(width,height){
+      this.width=width;
+      this.height=height
+    }
+    area(){
+      return this.width * this.height
+    }
+ };
+ var rect= new rectangle(10,20)
+ document.write("area is:"+rect.area())
+</script>
+
+
+</body>
+</html>

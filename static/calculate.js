@@ -21,7 +21,7 @@ function acceptKey(e) {
     }
 }
 
-function init() {
+function start() {
 	decimal = getID('btnDecimal');
 	zero = getID('btnZero');
 	one = getID('btnOne');
@@ -130,7 +130,7 @@ function inputDecimal() {
 
 function calculate() {
 	inputValue = 	getID('txtDisplay').value;
-	alert(inputValue)
+	//alert(inputValue)
 	if (addOperation) {
 		totalValue = parseFloat(totalValue) + parseFloat(inputValue);
 	} else if (subtractOperation) {
@@ -187,4 +187,4 @@ function clickDelete() {
 	}
 }
 
-window.onload = init;
+window.onload = start;

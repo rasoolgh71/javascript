@@ -15,7 +15,7 @@
 <br>
 <a href="calculate">calculate</a>
 <br>
-<a href="api">api</a>
+<a href="Es6">Es6</a>
 <br>
 <a href="snake">snake</a>
 <hr>
@@ -29,25 +29,40 @@
     <input type="button" value="getvalue" onclick="getvalue()">
     <input type="text" name="textuser" id="textid">
     <input type="button" value="print" onclick="window.print()">
-    <input type="button" value="1" id="btnone" onclick="getval('1')">
+    <input type="button" value="1" id="btnone">
     <input type="text" id="testid">
 </form>
-
-<canvas id="myCanvas" width="640" height="640" style="border:1px solid #000000;margin:0px auto;width:800px;"></canvas>
-
 <script>
 
+    function book(title,publisher,price){
+       this.title=title;
+       this.publisher=publisher;
+       this.price=price;
+    }
+    var newbook=new book("history","rasool",100);
+    document.write("newbook.tosource is:"+ newbook.toSource())
+
 </script>
-  document.addEventListener('keyboard',function(event))
+
+<script>
+   function display(){
+       document.write("is random" +"<br>")
+       x =  Math.floor(Math.random()*20);
+       document.write("x is:" + x)
+   }
+   display()
+
+</script>
+
 
 <script>
    var one;
     function init(){
-       one=getID("btnone")
-       one.onclick=function(){inputHandler('1');};
+       one=getId("btnone")
+       one.onclick=function(){inputHandler("1");};
 
     }
-    function getID(id){
+    function getId(id){
        alert(id)
        return document.getElementById(id);
 
@@ -56,18 +71,17 @@
 
     function inputHandler(txtNumber){
        //alert(txtNumber)
-       //var stringValue=getID("textid").value;
-       document.getID("textid").value;
-       alert(stringValue)
+       document.getElementById("testid").value=document.getElementById("testid").value+txtNumber
+       //alert(stringValue)
        //document.write(stringValue)
     }
-    //window.onload= init;
+    window.onload= init;
 </script>
 
 <script>
     function getval(val){
        //alert("in hi ");
-       document.getElementById("testid").value=document.getElementById("testid").value+val
+       //document.getElementById("testid").value=document.getElementById("testid").value+val
        //document.getElementById("btnone").value;
        //document.getElementById()
     }

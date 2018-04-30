@@ -10,8 +10,8 @@ def login(request):
 def calculate(request):
     return render(request,'task/calculate.html')
 
-def api(request):
-    return render(request,'task/api.html')
+def Es6(request):
+    return render(request,'task/Es6.html')
 
 def snake(request):
     return render(request,'task/snake.html')
