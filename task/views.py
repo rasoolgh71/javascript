@@ -15,3 +15,7 @@ def Es6(request):
 
 def snake(request):
     return render(request,'task/snake.html')
+def game(request):
+    return render(request,'task/game.html')
+def menu(request):
+    return  render(request,'task/menu.html')
